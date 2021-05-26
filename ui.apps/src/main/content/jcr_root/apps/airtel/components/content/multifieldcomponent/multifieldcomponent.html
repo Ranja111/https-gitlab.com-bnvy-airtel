@@ -1,0 +1,15 @@
+This is multifield component<br>
+
+
+<sly data-sly-use.objectInfo="airtel.core.models.AirtelMutliModel">
+
+<sly data-sly-list.listObject="${objectInfo.listInfo}"
+<p>${listObject.title}</p><br>
+<p>${listObject.description}</p><br>
+
+<img src="${listObject.img}">
+
+
+</sly>
+
+

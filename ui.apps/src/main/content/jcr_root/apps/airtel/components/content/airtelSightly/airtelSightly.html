@@ -1,0 +1,45 @@
+Hello<br>
+
+<sly data-sly-text="${properties.text}"> Text tag</sly><br>
+<p data-sly-element="${false?'div':''}"> Element tag</p><br>
+<sly data-sly-include="/apps/airtel/components/content/airtelSightly/sample.html"></sly><br>
+<sly data-sly-repeat.listObject="${currentPage.listChildren}">
+
+${listObject.name}
+
+</sly>
+
+<div data-sly-attribute.info="${properties.text}">Attribute tag</div>
+
+<sly data-sly-test.author="${wcmmode.edit}">
+
+<p> page open in edit mode
+</sly>
+
+<sly data-sly-test="${!author}">
+<p> page is opened in any other mode
+
+</sly>
+
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
+<sly data-sly-call="${clientlib.all @ categories='airte16'}" />
+
+<sly data-sly-use.temp="/apps/airtel/components/content/airtelSightly/temp.html">
+<sly data-sly-call="${temp.tempObject}"/>
+</sly>
+
+<sly data-sly-set.setObject="${properties.text}"> Set tag</sly>
+
+${setObject}
+
+<sly>${properties.textarea @ context='html'}</sly>
+
+
+<sly data-sly-use.referenceObject="airtel.core.models.AirtelModel"><br>
+
+<h>${referenceObject.text}</h>
+<h>${referenceObject.textarea @ context='html'}</h>
+
+</sly>
+
+

@@ -1,0 +1,23 @@
+<div class="expert">
+<sly data-sly-use.expertObject="airtel.core.models.ExpertDetailsModel">
+
+<h1>${expertObject.heading}</h1>
+
+<div class="expert-landing-img">
+<img src="${expertObject.image}" align="left" alt="${expertObject.alternate}" width="100%">
+  </div>
+  <div class="expert-ryt">
+<h2 class="areas-of-Expertise">${expertObject.subheading}</h2>
+<p>${expertObject.description @ context='html'}</p>
+
+  <div class="deadline-box">
+<p> <a href="mailto:xyz@gmail.com"> <img src="${expertObject.mailicon}"  alt="${expertObject.alternatemailicon}"></a>On Deadline? Contact Us</p>
+  </div>
+  </div>
+
+</sly>
+</div>
+ <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
+<sly data-sly-call="${clientlib.all @ categories='airtel17.expertdetails'}" />
+
+
